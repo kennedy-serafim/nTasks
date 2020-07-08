@@ -1,0 +1,31 @@
+{
+  "name": "ntasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon babel-node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennedy-serafim/nTasks.git"
+  },
+  "keywords": [],
+  "author": "Kennedy Melvin Serafim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kennedy-serafim/nTasks/issues"
+  },
+  "homepage": "https://github.com/kennedy-serafim/nTasks#readme",
+  "dependencies": {
+    "consign": "^0.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/node": "^7.10.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "nodemon": "^2.0.4"
+  }
+}
