@@ -19,7 +19,9 @@
   "homepage": "https://github.com/kennedy-serafim/nTasks#readme",
   "dependencies": {
     "consign": "^0.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sequelize": "^6.3.0",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",

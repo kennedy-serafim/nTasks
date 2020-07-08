@@ -1,11 +1,5 @@
-module.exports = app => {
-    return {
-        findAll: (params, callback) => {
-            return callback(
-                [
-                    { tittle: 'Some' }
-                ]
-            );
-        }
-    }
+module.exports = (sequelize, DataType) => {
+    const Tasks = sequelize.define("Tasks", {
+
+    });
 }
