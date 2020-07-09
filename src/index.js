@@ -9,6 +9,6 @@ consign({
     .include('libs/config.js')
     .then('data.js')
     .then('libs/middlewares.js')
-   // .then('routes')
+    .then('routes')
     .then('libs/boot.js')
     .into(app);
