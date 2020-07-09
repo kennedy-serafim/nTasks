@@ -1,19 +1,19 @@
-module.exports = (sequelize, DataType) => {
+module.exports = (sequelize, DataTypes) => {
     const Users = sequelize.define('Users', {
         id: {
-            type: DataType.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         name: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
         email: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 notEmpty: true
@@ -25,7 +25,8 @@ module.exports = (sequelize, DataType) => {
                 Users.hasMany(models.Tasks);
             }
         }
-    });
+    }
+    );
 
     return Users;
 }
