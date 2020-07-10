@@ -12,7 +12,7 @@ module.exports = app => {
         })
         .post((req, res) => {
             Tasks.create(req.body)
-                .then(result => req.json(result))
+                .then(result => res.json(result))
                 .catch(err => {
                     res.status(412).json(err.message);
                 });
