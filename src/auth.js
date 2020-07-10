@@ -10,6 +10,8 @@ module.exports = app => {
     opts.secretOrKey = process.env.JWT_SECRET;
 
     const strategy = new Strategy(opts, (payload, done) => {
+        console.log(`Payload ==>>>>>> ${payload}`)
+
         Users.findByPk(payload.id)
             .then(user => {
                 if (user) {
@@ -26,12 +28,16 @@ module.exports = app => {
 
     passport.use(strategy);
 
+    passport.serializeUser((user, done) => {
+        done(null, user.id);
+    });
+
     return {
         initialize: () => {
             return passport.initialize();
         },
         authenticate: () => {
-            return passport.authenticate('jwt', {session: process.env.JWT_SESSION});
+            return passport.authenticate('jwt', { session: process.env.JWT_SESSION });
         }
     }
 }

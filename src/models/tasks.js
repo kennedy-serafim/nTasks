@@ -18,12 +18,12 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: false
         }
     }, {
-        classMethods: {
-            associate: (models) => {
-                Tasks.belongsTo(models.Users);
-            }
-        }
+
     });
+
+    Tasks.associate = models => {
+        models.Tasks.belongsTo(models.Users);
+    }
 
     return Tasks;
 }
