@@ -2,6 +2,7 @@ module.exports = app => {
     const Tasks = app.data.Tasks;
 
     app.route("/tasks")
+        .all(app.auth.authenticate())
         .get((req, res) => {
             //Listar tarefas
             Tasks.findAll({})
@@ -19,6 +20,7 @@ module.exports = app => {
         });
 
     app.route('/tasks/:id')
+        .all(app.auth.authenticate())
         .get((req, res) => {
             Tasks.findOne({ where: req.params })
                 .then(result => {
